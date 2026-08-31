@@ -8,20 +8,35 @@
     <script src="https://kit.fontawesome.com/25d986f1d3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <div id="header-container">
-        <nav id="nav-container">
-            <ul>
 
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Cadastro</a></li>
-            <li><a href="#">Suporte</a></li>
+    <header class="header">
+    <a href="#inicio" class="logo">
+        <img src="assets/julia-bolos-mark.svg" alt="">
+        <span>Julia Bolos</span>
+    </a>
 
-            </ul>
-            
-        </nav>
-    </header>
-    </div>
+    <button
+        class="menu-btn"
+        id="menu-btn"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+    >
+        ☰
+    </button>
+
+    <nav class="menu" id="menu">
+        <a href="#inicio">Início</a>
+        <a href="#bolos">Bolos</a>
+        <a href="#sobre">Sobre nós</a>
+        <a href="#contato">Contato</a>
+
+        <div class="menu-separador"></div>
+
+        <a href="login.html">Login</a>
+        <a href="cadastro.html" class="menu-destaque">Cadastro</a>
+        <a href="suporte.html">Suporte</a>
+    </nav>
+</header>
 
     <main id="main-container">
 
@@ -157,4 +172,26 @@
         
     </footer>
 </body>
+
+<script>
+const menuBtn = document.getElementById("menu-btn");
+const menu = document.getElementById("menu");
+
+menuBtn.addEventListener("click", () => {
+
+    const aberto = menu.classList.toggle("aberto");
+
+    menuBtn.setAttribute("aria-expanded", aberto);
+
+    if (aberto) {
+        menuBtn.textContent = "✕";
+        menuBtn.setAttribute("aria-label", "Fechar menu");
+    } else {
+        menuBtn.textContent = "☰";
+        menuBtn.setAttribute("aria-label", "Abrir menu");
+    }
+
+});
+</script>
+
 </html>

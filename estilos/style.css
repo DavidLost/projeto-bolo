@@ -33,31 +33,139 @@ header {
    width: 100%;
 }
 
-#header-container {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5));
-    width: 90%;
-    max-width: 400px;
-    height: 150px;
-    margin: 0 auto;
+/* CABEÇALHO */
+.header {
+    position: relative;
+    z-index: 1000;
 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
+    height: 70px;
+    padding: 0 20px;
 
+    background: var(--branco);
+    border-bottom: 1px solid #eee;
 }
 
-#nav-container {
+/* LOGO */
+.logo {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    
-    
+    align-items: center;
+    gap: 8px;
+
+    color: var(--texto-principal);
+    text-decoration: none;
+
+    font-size: 22px;
+    font-weight: bold;
 }
 
-#nav-container ul {
+.logo img {
+    width: 35px;
+    height: 35px;
+}
+
+/* BOTÃO HAMBURGUER */
+.menu-btn {
     display: flex;
-    flex-direction: row;
-    gap: 15px;
-    list-style-type: none;
-    
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: transparent;
+    color: var(--texto-principal);
+
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* EFEITO AO CLICAR */
+.menu-btn:active {
+    background: #f0eafa;
+}
+
+/* MENU */
+.menu {
+    position: absolute;
+
+    top: 70px;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 15px 20px 25px;
+
+    background: var(--branco);
+
+    border-bottom: 1px solid #ddd;
+
+    box-shadow: 0 10px 30px rgba(35, 27, 51, 0.12);
+
+    /* escondido inicialmente */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s;
+}
+
+/* MENU ABERTO */
+.menu.aberto {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* LINKS */
+.menu a {
+    padding: 14px 10px;
+
+    color: var(--cores-bordas);
+    text-decoration: none;
+
+    font-size: 16px;
+
+    border-radius: 8px;
+}
+
+.menu a:hover {
+    background: #f4effb;
+    color: var(--texto-principal);
+}
+
+/* SEPARADOR */
+.menu-separador {
+    height: 1px;
+    margin: 8px 0;
+
+    background: #e8e3ee;
+}
+
+/* BOTÃO CADASTRO */
+.menu .menu-destaque {
+    margin-top: 5px;
+
+    text-align: center;
+
+    color: white;
+    background: var(--cor-tercearia);
+}
+
+.menu .menu-destaque:hover {
+    color: white;
+    background: var(--texto-principal);
 }
 
 #main-container {
