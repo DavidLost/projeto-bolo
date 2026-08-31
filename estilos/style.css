@@ -35,17 +35,14 @@ header {
 
 /* CABEÇALHO */
 .header {
-
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    height: 70px;
+    min-height: 70px;
     padding: 0 20px;
 
-    background: var(--branco);
-    border-bottom: 1px solid #eee;
-    box-shadow: 0px 0px 2px black;
+    background: white;
 }
 
 /* LOGO */
@@ -92,29 +89,21 @@ header {
 
 /* MENU */
 .menu {
-    
-
-    display: flex;
+    display: none;
     flex-direction: column;
-
+    width: 100%;
     padding: 15px 20px 25px;
 
     background: var(--branco);
 
     border-bottom: 1px solid #ddd;
-
-    box-shadow: 0 10px 30px rgba(35, 27, 51, 0.12);
-
-    /* escondido inicialmente */
-    
-
-    transition:
-        opacity 0.25s ease,
-        transform 0.25s ease,
-        visibility 0.25s;
+    box-shadow: 0 10px 30px rgba(35, 27, 51, 0.10);
 }
 
-/* MENU ABERTO */
+.menu.aberto {
+    display: flex;
+}
+
 
 
 /* LINKS */
